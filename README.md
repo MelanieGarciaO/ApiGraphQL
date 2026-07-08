@@ -92,27 +92,34 @@ Tabla 'productos' verificada/creada correctamente
 
 Abre **http://localhost:4000/graphql** en el navegador para acceder a **Apollo Sandbox**, la interfaz donde se ejecutan las queries y mutations.
 
-### Ejemplos de queries y mutations
+## Ejemplos de Queries y Mutations
 
-**Crear una categoría:**
+### Crear una categoría
+
 ```graphql
 mutation {
-  crearCategoria(input: { nombre: "Periféricos" }) {
+  crearCategoria(input: { nombre: "Audio" }) {
     id
     nombre
   }
 }
 ```
+<p align="center">
+  <img src="images/crearcategoria.png" width="800">
+</p>
 
 **Crear un producto asociado a una categoría:**
 ```graphql
 mutation {
-  crearProducto(input: { nombre: "Teclado mecánico", precio: 45.99, stock: 20, categoriaId: 1 }) {
+  crearProducto(input: { nombre: "Laptop Ultradelgada", precio: 899.99, stock: 5, categoriaId: 2 }) {
     id
     nombre
   }
 }
 ```
+<p align="center">
+  <img src="images/crearproducto.png" width="800">
+</p>
 
 **Consultar todos los productos (solo algunos campos, y con su categoría):**
 ```graphql
@@ -126,16 +133,23 @@ query {
   }
 }
 ```
+<p align="center">
+  <img src="images/Consulta todos los productos.png" width="800">
+</p>
 
 **Consultar un producto específico:**
 ```graphql
 query {
-  producto(id: 1) {
+  producto(id:4 ) {
     nombre
     stock
   }
 }
 ```
+<p align="center">
+  <img src="images/Consultar un producto específico.png" width="800">
+</p>
+
 
 **Filtrar productos por categoría o por rango de precio:**
 ```graphql
@@ -146,6 +160,12 @@ query {
   }
 }
 ```
+<p align="center">
+  <img src="images/Filtrar productos por categoría.png" width="800">
+</p>
+
+
+
 ```graphql
 query {
   productos(precioMin: 20, precioMax: 100) {
@@ -154,6 +174,9 @@ query {
   }
 }
 ```
+<p align="center">
+  <img src="images/por rango de precio.png" width="800">
+</p>
 
 **Consultar una categoría con todos sus productos:**
 ```graphql
@@ -167,24 +190,37 @@ query {
   }
 }
 ```
+<p align="center">
+  <img src="images/Consulta una categoría con todos sus productos.png" width="800">
+</p>
 
 **Actualizar / eliminar:**
 ```graphql
 mutation {
-  actualizarProducto(id: 1, input: { nombre: "Teclado gamer", precio: 55, stock: 15, categoriaId: 1 }) {
+  actualizarProducto(id: 5, input: { nombre: "Audífonos Bluetooth Pro", precio: 42, stock: 25, categoriaId: 7 }) {
     id
     nombre
+    precio
   }
 }
 ```
+<p align="center">
+  <img src="images/actualizarproducto.png" width="800">
+</p>
+
+
 ```graphql
 mutation {
-  eliminarProducto(id: 1) {
+  eliminarProducto(id: 4) {
     id
     nombre
   }
 }
 ```
+<p align="center">
+  <img src="images/eliminarProducto.png" width="800">
+</p>
+
 
 ## Validaciones
 
@@ -197,3 +233,4 @@ mutation {
 ## Autor
 
 Proyecto académico — UNEMI.
+MELANIE GARCÍA OBREGÓN
