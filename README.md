@@ -44,6 +44,8 @@ crud_graphql/
 - Node.js instalado
 - PostgreSQL instalado y corriendo localmente
 
+
+
 ## Instalación
 
 1. Clonar el repositorio:
